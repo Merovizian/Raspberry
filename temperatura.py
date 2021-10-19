@@ -41,10 +41,13 @@ a.writelines(f"   Time  - Temperatura\n")
 
 while True:
     try:
-        if(time() - time_atual >= 10 ):
+        if(time() - time_atual >= 100 ):
+            cpu = CPUTemperature()
+            temp = (cpu.temperature)
             horario = datetime.now().strftime("%H:%M:%S")
             a.writelines(f" {horario}    {temp}\n")
             time_atual = time()
+            
            
     except:
         a.writelines(f"\n\n")
