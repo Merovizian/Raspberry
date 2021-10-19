@@ -42,6 +42,7 @@ a.writelines(f"   Time  - Temperatura\n")
 while True:
     try:
         if(time() - time_atual >= 10 ):
+            horario = datetime.now().strftime("%H:%M:%S")
             a.writelines(f" {horario}    {temp}\n")
             time_atual = time()
            
