@@ -1,0 +1,4 @@
+xrandr -s 1280x720
+
+
+GIT SENHA :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
