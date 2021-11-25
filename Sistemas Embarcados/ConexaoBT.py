@@ -8,10 +8,6 @@ def scan():
     endereço MAC do DISPOSITIVO BLUETOOTH ESP32.
     '''
     
-    aux = 0
-    end = 0
-    nome = 0
-    
     print("Localizando o servidor ESP32 BT")  #Essa linha poderá ser apagada depois do programa estar pleno.
 
     devices = bluetooth.discover_devices(lookup_names = True, lookup_class = True)
@@ -20,10 +16,9 @@ def scan():
 
     for addr, name, device_class in devices:
         if (name == "ESP32_LED_Control"):
-            end = addr
            # nome = name   
            #  aux = 1
-            return end
+            return addr
         else:
             return 0
         
@@ -55,7 +50,7 @@ def envio(bd_addr, y):
 
     
 rede = scan()
-print(rede)
+print(rede) #Essa linha poderá ser apagada depois do programa estar pleno.
 y = "0" #Essa linha poderá ser apagada depois do programa estar pleno.
 for x in range (10): #ESTE FOR DEVERA SER APAGADO QUANOD O SITEMA ESTIVER OPERANTE.
     if (y == '0'):
